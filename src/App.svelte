@@ -50,9 +50,7 @@
 </script>
 
 <main class = 'center'>
-	<div id = 'background-wrapper'>
-		<img src = './assets/bg-darkened.jpg' alt = 'background image' aria-hidden='true' id = "main-bg"/>
-	</div>
+	<a id = "contact" href = '#'>Contact me</a>
 	{#if ready}
 		<h1 in:fly="{{ y: 200, duration: 2000 }}">Hi I'm Pawel and I create software, <br>have a look at 
 			<div id = "tansition-wrapper" class = "center">
@@ -63,6 +61,9 @@
 		</h1>
 	{/if}
 	<button>Learn more about what I do<br><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></button>
+	<div id = 'background-wrapper'>
+		<img src = './assets/bg-darkened.jpg' alt = 'background image' aria-hidden='true' id = "main-bg"/>
+	</div>
 </main>
 
 <style>
@@ -72,6 +73,25 @@ main
 	height:100vh;
 	position:relative;
 	overflow:hidden;
+}
+
+#contact
+{
+	position:absolute;
+	top:15px;
+	right:25px;
+	border:1px solid #fff;
+	color:#fff;
+	font-size:1rem;
+	cursor:pointer;
+	padding:7px 15px;
+	border-radius:5px;
+}
+
+#contact:hover
+{
+	opacity:0.7;
+	text-decoration:none;
 }
 
 #background-wrapper
@@ -176,6 +196,19 @@ svg
 {
 	height:35px;
 	width:35px;
+}
+
+@media screen and (max-width:650px)
+{
+	#contact
+	{
+		font-size:1.5rem;
+	}
+
+	button
+	{
+		font-size:1.3rem;
+	}
 }
 
 </style>
