@@ -6,7 +6,7 @@
 	let ready = false;
 	let timer;
 	let currWord = 0;
-	let words = ["what I've done.", "what I'm doing.", "what I want to do."];
+	let words = [["what I've done.", '#WhatIveDone'], ["what I'm doing.", '#WhatImDoing'], ["what I want to do.", "#WhatIWantToDo"]];
 	let	displayWords = [
 		{
 			words: words[0],
@@ -50,12 +50,12 @@
 </script>
 
 <main class = 'center'>
-	<a id = "contact" href = '#'>Contact me</a>
+	<a id = "contact" href = '#contact'>Contact me</a>
 	{#if ready}
 		<h1 in:fly="{{ y: 200, duration: 2000 }}">Hi I'm Pawel and I create software, <br>have a look at 
 			<div id = "tansition-wrapper" class = "center">
 				{#each displayWords as displayWord (displayWord.words)}
-					<a class = "words" class:words-out = "{displayWord.isOutTransition}" href = '#' aria-hidden='true'>{displayWord.words}</a>
+					<a class = "words" class:words-out = "{displayWord.isOutTransition}" href = {displayWord.words[1]} aria-hidden='true'>{displayWord.words[0]}</a>
 				{/each}
 			</div>
 		</h1>
