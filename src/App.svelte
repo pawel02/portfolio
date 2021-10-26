@@ -4,10 +4,48 @@
 	import simpleParallax from 'simple-parallax-js';
 
 	let ready = false;
+	let timer;
+	let currWord = 0;
+	let words = ["what I've done.", "what I'm doing.", "what I want to do."];
+	let	displayWords = [
+		{
+			words: words[0],
+			isOutTransition: false	
+		}];
 	onMount(() => {
+		ready = true;
 		var image = document.querySelector('#main-bg');
 		new simpleParallax(image);
-		ready = true;
+		timer = setInterval(() => {
+			// Moved to the next word
+			currWord = currWord + 1 > words.length - 1 ? 0 : currWord + 1;
+			if (currWord === 0)
+			{
+				displayWords = [
+					{
+						words: words[0],
+						isOutTransition: false
+					},
+					{
+						words: words[words.length - 1],
+						isOutTransition: true
+					}
+				]
+			}
+			else
+			{
+				displayWords = [
+					{
+						words: words[currWord],
+						isOutTransition: false
+					},
+					{
+						words: words[currWord - 1],
+						isOutTransition: true
+					}
+				]
+			}
+		}, 2000);
 	})
 </script>
 
@@ -17,7 +55,11 @@
 	</div>
 	{#if ready}
 		<h1 in:fly="{{ y: 200, duration: 2000 }}">Hi I'm Pawel and I create software, <br>have a look at 
-			<a href = '#' aria-hidden='true' in:fly="{{ y: 200, duration: 4000 }}">what I've done.</a>
+			<div id = "tansition-wrapper" class = "center">
+				{#each displayWords as displayWord (displayWord.words)}
+					<a class = "words" class:words-out = "{displayWord.isOutTransition}" href = '#' aria-hidden='true'>{displayWord.words}</a>
+				{/each}
+			</div>
 		</h1>
 	{/if}
 	<button>Learn more about what I do<br><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></button>
@@ -37,9 +79,65 @@ main
 	z-index:-1;
 	position:absolute;
 }
+
+#tansition-wrapper
+{
+	position:relative;
+	height:5rem;
+	overflow:hidden;
+}
+
+.words
+{
+	font-size:3rem;
+	animation-name:flyin;
+	animation-duration: 0.8s;
+	animation-timing-function: cubic-bezier(0.46, 1.1, 1, 1);
+	position:absolute;
+	top:initial;
+	opacity:1;
+}
+
+.words-out
+{
+	animation-name:flyout;
+	animation-timing-function: cubic-bezier(0.18, 0.94, 0.58, 1);
+	animation-duration:0.8s;
+	opacity:0;
+}
+
+@keyframes flyin
+{
+	0%
+	{
+		top:3rem;
+		opacity:0.5;
+	}
+
+	100%
+	{
+		top:0.5rem;
+		opacity:1;
+	}
+}
+
+@keyframes flyout
+{
+	0%
+	{
+		top:0.5rem;
+		opacity:1;
+	}
+	100%
+	{
+		opacity:0;
+		top:-3rem;
+	}
+}
+
 main img {
-	height:auto;
-	width:100%;
+	width:auto;
+	height:100%;
 }
 
 h1
@@ -78,15 +176,6 @@ svg
 {
 	height:35px;
 	width:35px;
-}
-
-@media screen and (orientation:portrait) 
-{
-	main img
-	{
-		width:auto;
-		height:100%;
-	}
 }
 
 </style>
