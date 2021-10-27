@@ -1,10 +1,3 @@
-<!-- 
-Displays what I currently do and can do:
- - Software engineering apprenticeship
- - Youtube
- - Contracting ( Created Cleanportsmouth )
--->
-
 <script>
     import {onMount} from 'svelte';
     import {fly} from 'svelte/transition';
@@ -40,7 +33,7 @@ Displays what I currently do and can do:
         <div class = "card-wrapper" transition:fly="{{ y: 200, duration: 2000 }}">
             <div class = "card card-left">
                 <h3>Contracting</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut illo blanditiis asperiores ullam exercitationem, corrupti labore at consequuntur voluptates, incidunt, iusto quibusdam accusamus aut hic fuga impedit autem tenetur voluptate.</p>
+                <p>Anything from web dev, cloud, game dev to embedded systems. I can accomidate any software development needs. I have experience working with GCP, Angular, JavaScript, C++, C#, Python, PHP, ReactJS, Firebase, MySQL and many more. I am constantly learning new technologies and work in an agile way. So if you don't find the tech stack that you're using here, I can learn it quick.</p>
             </div>
         </div
         ><div class = "image-wrapper center" transition:fly="{{ y: 150, duration: 1000 }}">
