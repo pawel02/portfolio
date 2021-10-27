@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import simpleParallax from 'simple-parallax-js';
+	import rippleAction from './actions/rippleAction';
 	import Do from './Do.svelte';
 	import Controls from './Controls.svelte'
 	import Done from './Done.svelte';
@@ -53,7 +54,9 @@
 </script>
 
 <main class = 'center' id="top">
-	<a id = "contact" href = '#contact'>Contact me</a>
+	<div id = "contact-wrapper">
+		<a id = "contact" href = '#contact' use:rippleAction>Contact me</a>
+	</div>
 	{#if ready}
 		<h1 in:fly="{{ y: 200, duration: 2000 }}">Hi I'm Pawel and I create software, <br>have a look at 
 			<div id = "tansition-wrapper" class = "center">
@@ -90,11 +93,15 @@ main
 	overflow:hidden;
 }
 
-#contact
+#contact-wrapper
 {
 	position:absolute;
-	top:15px;
+	top:25px;
 	right:25px;
+}
+
+#contact
+{
 	border:1px solid #fff;
 	color:#fff;
 	font-size:1rem;
