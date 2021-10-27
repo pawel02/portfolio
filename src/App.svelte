@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import simpleParallax from 'simple-parallax-js';
 	import Do from './Do.svelte';
+	import Controls from './Controls.svelte'
 
 	let ready = false;
 	let timer;
@@ -50,7 +51,7 @@
 	})
 </script>
 
-<main class = 'center'>
+<main class = 'center' id="top">
 	<a id = "contact" href = '#contact'>Contact me</a>
 	{#if ready}
 		<h1 in:fly="{{ y: 200, duration: 2000 }}">Hi I'm Pawel and I create software, <br>have a look at 
@@ -66,7 +67,7 @@
 		<img src = './assets/bg-darkened.jpg' alt = 'background image' aria-hidden='true' id = "main-bg"/>
 	</div>
 </main>
-
+<Controls />
 <Do />
 
 <style>
