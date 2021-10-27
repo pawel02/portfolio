@@ -15,13 +15,13 @@ Displays what I currently do and can do:
     function checkPosition()
     {
         var rect1 = document.querySelectorAll(".section-wrapper")[0].getBoundingClientRect();
-        scrolledInViews[0] = scrolledInViews[0] ? true : rect1.y <= window.innerHeight - (rect1.height / 4);
+        scrolledInViews[0] = scrolledInViews[0] ? true : rect1.y <= window.innerHeight - (rect1.height / 2);
 
         var rect2 = document.querySelectorAll(".section-wrapper")[1].getBoundingClientRect();
-        scrolledInViews[1] = scrolledInViews[1] ? true : rect2.y <= window.innerHeight - (rect2.height / 4);
+        scrolledInViews[1] = scrolledInViews[1] ? true : rect2.y <= window.innerHeight - (rect2.height / 2);
 
         var rect3 = document.querySelectorAll(".section-wrapper")[2].getBoundingClientRect();
-        scrolledInViews[2] = scrolledInViews[2] ? true : rect3.y <= window.innerHeight - (rect3.height / 4);
+        scrolledInViews[2] = scrolledInViews[2] ? true : rect3.y <= window.innerHeight - (rect3.height / 2);
     }
 
     onMount(() => {
@@ -51,7 +51,7 @@ Displays what I currently do and can do:
 
     <div class = "section-wrapper section-wrapper-right">
         {#if scrolledInViews[1]}
-        <div class = "image-wrapper center" transition:fly="{{ y: 150, duration: 1000 }}">
+        <div class = "image-wrapper center" style = "justify-self:right" transition:fly="{{ y: 150, duration: 1000 }}">
             <img src = "./assets/contracting.jpg" alt = "Contracting">
         </div
         ><div class = "card-wrapper" transition:fly="{{ y: 200, duration: 2000 }}">
@@ -79,13 +79,6 @@ Displays what I currently do and can do:
 </section>
 
 <style>
-h2
-{
-    font-size:3rem;
-    margin:25px 0;
-    text-align:center;
-    width:100%;
-}
 h3 
 {
     font-size:1.8rem;
@@ -144,15 +137,64 @@ p
 
 .image-wrapper
 {
-    width:100%;
+    width:90%;
     height:80%;
     overflow:hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 img
 {
-    width:90%;
-    height:auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width:auto;
+    height:150%;
+}
+
+@media screen and (max-width: 1000px)
+{
+    .card-left
+    {
+        margin-left:10%;
+    }
+    .card-right
+    {
+        margin-left:-30%;
+    }
+    .card
+    {
+        width:110%;
+    }
+}
+
+@media screen and (max-width: 750px)
+{
+    .section-wrapper
+    {
+        grid-template-columns:1fr 0;
+        height:auto;
+        padding:25px 0;
+    }
+    .image-wrapper
+    {
+        display:none;
+    }
+
+    .card
+    {
+        width:90%;
+        display:block;
+        margin:0 auto !important;
+    }
+    .card-left
+    {
+        margin:0;
+    }
+    .card-right
+    {
+        margin:0;
+    }
+    p
+    {
+        font-size:1.5rem;
+    }
 }
 </style>

@@ -44,6 +44,14 @@ a:visited {
 	align-items: center;
 }
 
+h2
+{
+    font-size:3rem;
+    margin:25px 0;
+    text-align:center;
+    width:100%;
+}
+
 /*Ripple effect*/
 .ripple
 {

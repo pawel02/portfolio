@@ -4,6 +4,7 @@
 	import simpleParallax from 'simple-parallax-js';
 	import Do from './Do.svelte';
 	import Controls from './Controls.svelte'
+	import Done from './Done.svelte';
 
 	let ready = false;
 	let timer;
@@ -69,7 +70,7 @@
 </main>
 <Controls />
 <Do />
-
+<Done />
 <!-- Done -->
 <!--
 	Contact form
@@ -179,6 +180,7 @@ h1
 	color:#fff;
 	font-size:3rem;
 	text-align:center;
+	padding:0 15px;
 }
 
 
@@ -221,10 +223,30 @@ svg
 		font-size:1.5rem;
 	}
 
-	button
+	.learn-more
 	{
 		font-size:1.3rem;
 	}
+
+	#tansition-wrapper
+	{
+		height:10rem;
+	}
+
+	@keyframes flyin
+{
+	0%
+	{
+		top:3rem;
+		opacity:0.5;
+	}
+
+	100%
+	{
+		top:1rem;
+		opacity:1;
+	}
+}
 }
 
 </style>
