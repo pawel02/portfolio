@@ -36,21 +36,21 @@
                 <p>Anything from web dev, cloud, game dev to embedded systems. I can accomidate any software development needs. I have experience working with GCP, Angular, JavaScript, C++, C#, Python, PHP, ReactJS, Firebase, MySQL and many more. I am constantly learning new technologies and work in an agile way. So if you don't find the tech stack that you're using here, I can learn it quick.</p>
             </div>
         </div
-        ><div class = "image-wrapper center" transition:fly="{{ y: 150, duration: 1000 }}">
+        ><a href="#contact" class = "image-wrapper center" transition:fly="{{ y: 150, duration: 1000 }}">
             <img src = "./assets/contracting.jpg" alt = "Contracting">
-        </div>
+        </a>
         {/if}
     </div>
 
     <div class = "section-wrapper section-wrapper-right">
         {#if scrolledInViews[1]}
-        <div class = "image-wrapper center" style = "justify-self:right" transition:fly="{{ y: 150, duration: 1000 }}">
+        <a href = "www.youtube.com/Computeshorts" class = "image-wrapper center" style = "justify-self:right" transition:fly="{{ y: 150, duration: 1000 }}">
             <img src = "./assets/contracting.jpg" alt = "Contracting">
-        </div
+        </a
         ><div class = "card-wrapper" transition:fly="{{ y: 200, duration: 2000 }}">
-            <div class = "card card-right">
+            <div class = "card card-right" style = "border:1px solid #00a700;">
                 <h3>Youtube</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut illo blanditiis asperiores ullam exercitationem, corrupti labore at consequuntur voluptates, incidunt, iusto quibusdam accusamus aut hic fuga impedit autem tenetur voluptate.</p>
+                <p>I try to keep in touch with the community and help out others therefore I have an active youtube channel where I post programming tutorial videos. </p>
             </div>
         </div>
         {/if}
@@ -59,9 +59,9 @@
     <div class = "section-wrapper section-wrapper-left">
         {#if scrolledInViews[2]}
         <div class = "card-wrapper" transition:fly="{{ y: 200, duration: 2000 }}">
-            <div class = "card card-left">
+            <div class = "card card-left" style = "border:1px solid #0f4eff;">
                 <h3>Software Engineering Apprenticeship</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut illo blanditiis asperiores ullam exercitationem, corrupti labore at consequuntur voluptates, incidunt, iusto quibusdam accusamus aut hic fuga impedit autem tenetur voluptate.</p>
+                <p>To extends my skills further I am currently studying for a degree in digital and techonology solutions at Warwick university as part of my apprenticeship at Thales.</p>
             </div>
         </div
         ><div class = "image-wrapper center" transition:fly="{{ y: 150, duration: 1000 }}">
