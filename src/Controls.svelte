@@ -20,8 +20,8 @@ a
     position:fixed;
     bottom:25px;
     right:25px;
-    width:45px;
-    height:45px;
+    width:35px;
+    height:35px;
     border-radius:50%;
     background-color:#fff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -31,7 +31,7 @@ a svg
 {
     fill:#333;
     transform:rotate(-180deg);
-    width:35px;
-    height:35px;
+    width:30px;
+    height:30px;
 }
 </style>
