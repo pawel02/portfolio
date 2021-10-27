@@ -2,11 +2,12 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import simpleParallax from 'simple-parallax-js';
+	import Do from './Do.svelte';
 
 	let ready = false;
 	let timer;
 	let currWord = 0;
-	let words = [["what I've done.", '#WhatIveDone'], ["what I'm doing.", '#WhatImDoing'], ["what I want to do.", "#WhatIWantToDo"]];
+	let words = [["what I've done.", '#WhatIveDone'], ["what I'm doing.", '#WhatImDoing'], ["what I love doing.", "#WhatImDoing"]];
 	let	displayWords = [
 		{
 			words: words[0],
@@ -60,11 +61,13 @@
 			</div>
 		</h1>
 	{/if}
-	<button>Learn more about what I do<br><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></button>
+	<a class = "learn-more" href = "#WhatImDoing">Learn more about what I do<br><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></a>
 	<div id = 'background-wrapper'>
 		<img src = './assets/bg-darkened.jpg' alt = 'background image' aria-hidden='true' id = "main-bg"/>
 	</div>
 </main>
+
+<Do />
 
 <style>
 main
@@ -168,7 +171,7 @@ h1
 }
 
 
-button
+.learn-more
 {
 	position:absolute;
 	bottom:0;
@@ -180,14 +183,16 @@ button
 	font-size:1.1rem;
 	border:0px;
 	cursor:pointer;
+	text-align:center;
 }
 
-button:hover
+.learn-more:hover
 {
 	opacity:0.8;
+	text-decoration: none;
 }
 
-button:focus
+.learn-more:focus
 {
 	outline:1px solid #fff;
 }

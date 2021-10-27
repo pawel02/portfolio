@@ -1,15 +1,27 @@
+:root
+{
+	/* CSS HEX */
+	--light-goldenrod-yellow: #efeccaff;
+	--cambridge-blue: #a9cbb7ff;
+	--laser-lemon: #f7ff58ff;
+	--atomic-tangerine: #ff934fff;
+	--dark-liver: #5e565aff;
+}
+
 html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	margin:0;
 	padding:0;
+	scroll-behavior: smooth;
 }
 
 body {
 	color: #333;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background-color:#fff;
 }
 
 a {
