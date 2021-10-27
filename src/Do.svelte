@@ -4,19 +4,46 @@ Displays what I currently do and can do:
  - Youtube
  - Contracting ( Created Cleanportsmouth )
 -->
+
+<script>
+    import {onMount} from 'svelte';
+    import {fly} from 'svelte/transition';
+
+    let scrollY;
+    let scrolledInViews = [false, false, false];
+
+    function checkPosition()
+    {
+        // get the position of #WhatImDoing
+        var rect = document.querySelectorAll(".section-wrapper")[0].getBoundingClientRect();
+
+        scrolledInViews[0] = scrolledInViews[0] ? true : rect.y <= window.innerHeight - (rect.height / 4);
+        console.log(scrolledInViews[0]);
+    }
+
+    onMount(() => {
+        checkPosition();
+    })
+
+</script>
+
+<svelte:window bind:scrollY on:scroll={checkPosition} on:resize={checkPosition}></svelte:window>
+
 <section id = "WhatImDoing">
     <h2>What I do</h2>
 
     <div class = "section-wrapper">
-        <div class = "card-wrapper">
+        {#if scrolledInViews[0]}
+        <div class = "card-wrapper" transition:fly="{{ y: 200, duration: 2000 }}">
             <div class = "card">
                 <h3>Contracting</h3>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut illo blanditiis asperiores ullam exercitationem, corrupti labore at consequuntur voluptates, incidunt, iusto quibusdam accusamus aut hic fuga impedit autem tenetur voluptate.</p>
             </div>
         </div
-        ><div class = "image-wrapper center">
+        ><div class = "image-wrapper center" transition:fly="{{ y: 150, duration: 1000 }}">
             <img src = "./assets/contracting.jpg" alt = "Contracting">
         </div>
+        {/if}
     </div>
 </section>
 
@@ -36,11 +63,13 @@ h3
 
 .section-wrapper
 {
+    height:400px;
+    overflow:hidden;
     display:grid;
     grid-template-columns: 1fr 1.5fr;
     align-items: center;
     justify-content: center;
-    height:400px;
+    width:100%;
 }
 
 .card-wrapper
