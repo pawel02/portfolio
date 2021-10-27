@@ -51,12 +51,13 @@ h3
 
 .card
 {
-    width:100%;
+    width:90%;
     margin-left:40%;
     border-radius:15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     padding:10px;
     background-color:#fff;
+    border:1px solid var(--atomic-tangerine);
 }
 
 p
@@ -76,5 +77,6 @@ img
 {
     width:90%;
     height:auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 </style>

@@ -70,6 +70,16 @@
 <Controls />
 <Do />
 
+<!-- Done -->
+<!--
+	Contact form
+-->
+<!-- 
+Add a footer containing:
+- Links to my socials
+- links to the github page
+-->
+
 <style>
 main
 {
