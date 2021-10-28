@@ -50,7 +50,7 @@
         ><div class = "card-wrapper" transition:fly="{{ y: 200, duration: 2000 }}">
             <div class = "card card-right" style = "border:1px solid #00a700;">
                 <h3>Youtube</h3>
-                <p>I try to keep in touch with the community and help out others therefore I have an active youtube channel where I post programming tutorial videos. </p>
+                <p>I try to keep in touch with the community and help out others therefore I have an active <a href = "https://www.youtube.com/channel/UC2clDLZK1wXYB5be4b240Hg" target="_blank">youtube channel</a> where I post programming tutorial videos. </p>
             </div>
         </div>
         {/if}
@@ -61,7 +61,7 @@
         <div class = "card-wrapper" transition:fly="{{ y: 200, duration: 2000 }}">
             <div class = "card card-left" style = "border:1px solid #0f4eff;">
                 <h3>Software Engineering Apprenticeship</h3>
-                <p>To extends my skills further I am currently studying for a degree in digital and techonology solutions at Warwick university as part of my apprenticeship at Thales.</p>
+                <p>To extends my skills further I am currently studying for a degree in digital and techonology solutions at <a href = "https://warwick.ac.uk/" target="_blank">Warwick university</a> as part of my apprenticeship at <a href = "https://www.thalesgroup.com/en" target="_blank">Thales.</a></p>
             </div>
         </div
         ><div class = "image-wrapper center" transition:fly="{{ y: 150, duration: 1000 }}">
