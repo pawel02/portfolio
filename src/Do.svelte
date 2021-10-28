@@ -65,7 +65,7 @@
             </div>
         </div
         ><div class = "image-wrapper center" transition:fly="{{ y: 150, duration: 1000 }}">
-            <img src = "./assets/contracting.jpg" alt = "Contracting">
+            <img src = "./assets/apprenticeship.png" alt = "Apprenticeship">
         </div>
         {/if}
     </div>
